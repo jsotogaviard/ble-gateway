@@ -1,5 +1,7 @@
 FROM node:16.13.1
 
+USER root
+
 # Install everything that is necessary to run crons and bluetooth
 RUN apt-get update && apt-get -y install cron nano less vim bluetooth bluez libbluetooth-dev libudev-dev libcap2-bin
 
