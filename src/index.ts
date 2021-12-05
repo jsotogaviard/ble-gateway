@@ -1,15 +1,13 @@
 import noble from '@abandonware/noble'
 import { toMetricData } from './sensors/to-metric-data'
-import { CloudWatchClient, PutMetricDataCommand } from "@aws-sdk/client-cloudwatch";
+import { CloudWatchClient, PutMetricDataCommand } from "@aws-sdk/client-cloudwatch"
+import credentials from './credentials'
 
 // create cloud watch client
 const client = new CloudWatchClient({
     region:'us-east-1',
-    credentials: {
-        accessKeyId: 'AKIAZYVMHR6B7U4QGQEZ',
-        secretAccessKey : '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'
-    }
-});
+    credentials: credentials
+})
 
 const onStateChanged = (state) => {
     if (state === 'poweredOn') {
@@ -22,15 +20,15 @@ const onStateChanged = (state) => {
 const onDiscovered = async (peripheral) => {
     const metricData = toMetricData(peripheral)
     if (metricData){
-        const command = new PutMetricDataCommand(metricData);
-        await client.send(command);
+        const command = new PutMetricDataCommand(metricData)
+        await client.send(command)
     }  
 }
 
 // start scanning
-noble.on('stateChange', onStateChanged);
+noble.on('stateChange', onStateChanged)
 
 // discover ble devices
-noble.on('discover', onDiscovered);
+noble.on('discover', onDiscovered)
 
 

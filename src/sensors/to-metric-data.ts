@@ -14,9 +14,9 @@ function toMetricData(peripheral){
     const uuid = peripheral.advertisement.serviceData[0].uuid
     switch (uuid) {
         case XiamiMijiaThermometer.XIAOMI_MIJIA_THERMOMETER_UUID:
-            return XiamiMijiaThermometer.toMetricData(peripheral);
+            return XiamiMijiaThermometer.toMetricData(peripheral)
         case XiaomiMiScale.XIAOMI_MI_SCALE_UUID:        
-            return XiaomiMiScale.toMetricData(peripheral);
+            return XiaomiMiScale.toMetricData(peripheral)
         default:
             //console.log("Unknown uuid " + uuid)
             return
