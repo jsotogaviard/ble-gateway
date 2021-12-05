@@ -10,7 +10,7 @@ npm run main
 ```
 note: docker does not work 'EAFNOSUPPORT, Address family not supported by protocol' 
 
-# production mode
+# docker mode
 nmap -sn 192.168.1.0/24
 ```
 git clone https://github.com/jsotogaviard/ble-gateway
