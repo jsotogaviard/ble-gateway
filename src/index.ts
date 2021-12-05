@@ -6,8 +6,8 @@ import { CloudWatchClient, PutMetricDataCommand } from "@aws-sdk/client-cloudwat
 const client = new CloudWatchClient({
     region:'us-east-1',
     credentials: {
-        accessKeyId : 'AKIAZYVMHR6B7U4QGQEZ',
-        secretAccessKey : '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'
+        accessKeyId : 'AKIAZYVMHR6B7U4QGQEA',
+        secretAccessKey : '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'
     }
 });
 
