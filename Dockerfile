@@ -1,4 +1,4 @@
-FROM node:15.11.0
+FROM node:16.13.1
 
 # Install everything that is necessary to run crons and bluetooth
 RUN apt-get update && apt-get -y install cron nano less vim bluetooth bluez libbluetooth-dev libudev-dev libcap2-bin
@@ -10,7 +10,7 @@ RUN setcap cap_net_raw+eip $(eval readlink -f `which node`)
 WORKDIR /usr/src/app
 
 # Copy source files
-COPY package*.json ./
+COPY package*.json .
 COPY src src
 COPY tsconfig.json tsconfig.json
 

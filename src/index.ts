@@ -6,7 +6,7 @@ import { CloudWatchClient, PutMetricDataCommand } from "@aws-sdk/client-cloudwat
 const client = new CloudWatchClient({
     region:'us-east-1',
     credentials: {
-        accessKeyId : 'AKIAZYVMHR6B7U4QGQEA',
+        accessKeyId: 'AKIAZYVMHR6B7U4QGQEZ',
         secretAccessKey : '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'
     }
 });
@@ -27,7 +27,7 @@ const onDiscovered = async (peripheral) => {
     }  
 }
 
-// Start scanning
+// start scanning
 noble.on('stateChange', onStateChanged);
 
 // discover ble devices

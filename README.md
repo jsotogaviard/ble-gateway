@@ -1,18 +1,17 @@
 # ble gateway
-ble gateway device that send ble data to cloud watch
+ble gateway that sends ble data from sensors to cloud watch
 
 # dev mode
-## project setup
 ```
+git clone https://github.com/jsotogaviard/ble-gateway
+cd ble-gateway
 npm install
+npm run main
 ```
-## project start
-```
-npm run start
-```
+note: docker does not work 'Cannot find module '@abandonware/bluetooth-hci-socket'' 
 
 # production mode
-nmap -sn 192.168.0.0/24
+nmap -sn 192.168.1.0/24
 ```
 git clone https://github.com/jsotogaviard/ble-gateway
 cd ble-gateway
