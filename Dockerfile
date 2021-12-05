@@ -10,7 +10,7 @@ RUN setcap cap_net_raw+eip $(eval readlink -f `which node`)
 WORKDIR /usr/src/app
 
 # Copy source files
-COPY package*.json .
+COPY package*.json ./
 COPY src src
 COPY tsconfig.json tsconfig.json
 

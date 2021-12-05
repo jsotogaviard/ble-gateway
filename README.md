@@ -8,7 +8,7 @@ cd ble-gateway
 npm install
 npm run main
 ```
-note: docker does not work 'Cannot find module '@abandonware/bluetooth-hci-socket'' 
+note: docker does not work 'EAFNOSUPPORT, Address family not supported by protocol' 
 
 # production mode
 nmap -sn 192.168.1.0/24
