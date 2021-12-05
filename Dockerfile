@@ -4,7 +4,7 @@ FROM node:16.13.1
 RUN apt-get update && apt-get -y install cron nano less vim bluetooth bluez libbluetooth-dev libudev-dev libcap2-bin
 
 # Mandatory from https://github.com/abandonware/noble#linux
-RUN sudo setcap cap_net_raw+eip $(eval readlink -f `which node`)
+RUN setcap cap_net_raw+eip $(eval readlink -f `which node`)
 
 # Create app directory to run node js app
 WORKDIR /usr/src/app
