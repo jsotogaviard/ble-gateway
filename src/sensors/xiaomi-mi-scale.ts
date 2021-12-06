@@ -10,7 +10,7 @@ export default class XiaomiMiScale {
         if(weight < 70){
             return this.armance
         } else {
-            return this.armance
+            return this.jonathan
         }
     }
 
@@ -41,6 +41,8 @@ export default class XiaomiMiScale {
             // KG
             weight = rawWeight / 200
         }
+
+        /*
         const year = parseInt(serviceDataHex.substring(8, 10) + serviceDataHex.substring(6, 8), 16)
         const month = parseInt(serviceDataHex.substring(10, 12), 16)
         const day = parseInt(serviceDataHex.substring(12, 14), 16)
@@ -50,13 +52,14 @@ export default class XiaomiMiScale {
         const weightingTime = Date.UTC(year, month - 1, day, hour, minute, second)
         const currentOffset = moment.tz('Europe/Paris').utcOffset() * 60 * 1000 // current offset in milli seconds
         const weightingTimeOffset = weightingTime - currentOffset
+        */
 
         return {
             MetricData: [
                 {
                     MetricName: 'weight',
                     Dimensions: [{ Name: 'person', Value: this.getPerson(weight) }],
-                    Timestamp: new Date(weightingTimeOffset),
+                    Timestamp: new Date(),
                     Unit: 'None',
                     Value: weight
                 }
