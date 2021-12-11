@@ -15,49 +15,49 @@ export default class XiaomiMijiaThermometer {
         const rssi = peripheral.rssi
 
         const coeff = 1000 * 60 * 5
-        const closestFiveMinutes = new Date()
+        const now = new Date()
         
         return {
             MetricData: [
                 {
                     MetricName: 'temperature',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: closestFiveMinutes,
+                    Timestamp: now,
                     Unit: 'None',
                     Value: temperature
                 },
                 {
                     MetricName: 'humidity',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: closestFiveMinutes,
+                    Timestamp: now,
                     Unit: 'None',
                     Value: humidity
                 },
                 {
                     MetricName: 'batteryPercentage',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: closestFiveMinutes,
+                    Timestamp: now,
                     Unit: 'None',
                     Value: batteryPercentage
                 },
                 {
                     MetricName: 'batteryMillivolts',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: closestFiveMinutes,
+                    Timestamp: now,
                     Unit: 'None',
                     Value: batteryMillivolts
                 },
                 {
                     MetricName: 'counter',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: closestFiveMinutes,
+                    Timestamp: now,
                     Unit: 'None',
                     Value: counter
                 },
                 {
                     MetricName: 'rssi',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: closestFiveMinutes,
+                    Timestamp: now,
                     Unit: 'None',
                     Value: rssi
                 },
