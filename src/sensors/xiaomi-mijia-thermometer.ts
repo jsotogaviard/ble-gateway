@@ -15,9 +15,7 @@ export default class XiaomiMijiaThermometer {
         const rssi = peripheral.rssi
 
         const coeff = 1000 * 60 * 5
-        const round = Math.round(new Date().getTime() / coeff) * coeff
         const closestFiveMinutes = new Date()
-        closestFiveMinutes.setTime(round)
         
         return {
             MetricData: [
