@@ -24,42 +24,42 @@ export default class XiaomiMijiaThermometer {
                 {
                     MetricName: 'temperature',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: now,
+                    Timestamp: closestFiveMinutes,
                     Unit: 'None',
                     Value: temperature
                 },
                 {
                     MetricName: 'humidity',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: now,
+                    Timestamp: closestFiveMinutes,
                     Unit: 'None',
                     Value: humidity
                 },
                 {
                     MetricName: 'batteryPercentage',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: now,
+                    Timestamp: closestFiveMinutes,
                     Unit: 'None',
                     Value: batteryPercentage
                 },
                 {
                     MetricName: 'batteryMillivolts',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: now,
+                    Timestamp: closestFiveMinutes,
                     Unit: 'None',
                     Value: batteryMillivolts
                 },
                 {
                     MetricName: 'counter',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: now,
+                    Timestamp: closestFiveMinutes,
                     Unit: 'None',
                     Value: counter
                 },
                 {
                     MetricName: 'rssi',
                     Dimensions: [{ Name: 'room', Value: mac }],
-                    Timestamp: now,
+                    Timestamp: closestFiveMinutes,
                     Unit: 'None',
                     Value: rssi
                 },
