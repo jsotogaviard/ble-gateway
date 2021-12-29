@@ -14,7 +14,7 @@ export default class XiaomiMijiaThermometer {
         const counter = parseInt(serviceDataHex.substring(12 + 4 + 2 + 2 + 4, 12 + 4 + 2 + 2 + 4 + 2), 16)
         const rssi = peripheral.rssi
 
-        const coeff = 1000 * 60
+        const coeff = 5 * 1000 * 60
         const round = Math.round(new Date().getTime() / coeff) * coeff
         const closestFiveMinutes = new Date()
         closestFiveMinutes.setTime(round)
