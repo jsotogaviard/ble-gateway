@@ -12,6 +12,7 @@ const client = new CloudWatchClient({
 })
 
 const periodicTask = () => {
+    console.log('-----')
     noble.stopScanning()
     noble.startScanning([], false)
     timer = setTimeout(periodicTask, 60 * 1000)
