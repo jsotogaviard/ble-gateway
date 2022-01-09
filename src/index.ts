@@ -21,7 +21,6 @@ const onDiscovered = async (peripheral) => {
     const metricData = toMetricData(peripheral)
     if (metricData){
         console.log(i++)
-        console.log(peripheral)
         const command = new PutMetricDataCommand(metricData)
         await client.send(command)
     }  

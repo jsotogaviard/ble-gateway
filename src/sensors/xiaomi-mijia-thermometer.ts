@@ -18,7 +18,7 @@ export default class XiaomiMijiaThermometer {
         const round = Math.round(new Date().getTime() / coeff) * coeff
         const closestFiveMinutes = new Date()
         closestFiveMinutes.setTime(round)
-        
+        console.log(mac + "-" + temperature + "-" + humidity + "-" + batteryPercentage)
         return {
             MetricData: [
                 {
