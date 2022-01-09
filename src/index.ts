@@ -3,7 +3,7 @@ import { toMetricData } from './sensors/to-metric-data'
 import { CloudWatchClient, PutMetricDataCommand } from "@aws-sdk/client-cloudwatch"
 import credentials from './credentials'
 
-let timer 
+let timer, i = 0
 
 // create cloud watch client
 const client = new CloudWatchClient({
@@ -29,6 +29,7 @@ const onStateChanged = (state) => {
 const onDiscovered = async (peripheral) => {
     const metricData = toMetricData(peripheral)
     if (metricData){
+        console.log(i++)
         const command = new PutMetricDataCommand(metricData)
         await client.send(command)
     }  
