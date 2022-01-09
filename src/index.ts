@@ -12,7 +12,6 @@ const client = new CloudWatchClient({
 })
 
 const periodicTask = () => {
-    console.log('-----')
     noble.stopScanning()
     noble.startScanning([], false)
     timer = setTimeout(periodicTask, 60 * 1000)
@@ -30,7 +29,6 @@ const onStateChanged = (state) => {
 const onDiscovered = async (peripheral) => {
     const metricData = toMetricData(peripheral)
     if (metricData){
-        console.log(i++)
         const command = new PutMetricDataCommand(metricData)
         await client.send(command)
     }  
