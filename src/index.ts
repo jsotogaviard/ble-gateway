@@ -2,17 +2,26 @@ import noble from '@abandonware/noble'
 import { toMetricData } from './sensors/to-metric-data'
 import { CloudWatchClient, PutMetricDataCommand } from "@aws-sdk/client-cloudwatch"
 import credentials from './credentials'
-let i = 0
+
+let timer 
+
 // create cloud watch client
 const client = new CloudWatchClient({
     region:'us-east-1',
     credentials: credentials
 })
 
+const periodicTask = () => {
+    noble.stopScanning()
+    noble.startScanning([], false)
+    timer = setTimeout(periodicTask, 60 * 1000)
+}
+
 const onStateChanged = (state) => {
     if (state === 'poweredOn') {
-        noble.startScanning([], false)
+        periodicTask()
     } else {
+        clearTimeout(timer)
         noble.stopScanning()
     }
 }
@@ -20,7 +29,6 @@ const onStateChanged = (state) => {
 const onDiscovered = async (peripheral) => {
     const metricData = toMetricData(peripheral)
     if (metricData){
-        console.log(i++)
         const command = new PutMetricDataCommand(metricData)
         await client.send(command)
     }  
