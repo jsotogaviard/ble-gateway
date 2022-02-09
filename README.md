@@ -29,5 +29,3 @@ cd ble-gateway
 docker-compose down -v --remove-orphans && docker-compose up --build -d && docker-compose logs -f
 ```
 note : works on raspberry pi 4 but on mac it throws a 'EAFNOSUPPORT, Address family not supported by protocol' 
-
-70000 put metrics per day

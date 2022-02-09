@@ -31,7 +31,7 @@ export default class XiaomiMijiaThermometer {
                     Unit: 'None',
                     Value: humidity
                 },
-                {
+                /* {
                     MetricName: 'batteryPercentage',
                     Dimensions: [{ Name: 'room', Value: mac }],
                     Timestamp: closestFiveMinutes,
@@ -58,7 +58,7 @@ export default class XiaomiMijiaThermometer {
                     Timestamp: closestFiveMinutes,
                     Unit: 'None',
                     Value: rssi
-                },
+                }, */
             ],
             Namespace: 'soto.chassaigne'
         }
