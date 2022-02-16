@@ -24,14 +24,14 @@ export default class XiaomiMijiaThermometer {
                     Unit: 'None',
                     Value: temperature
                 },
-                {
+                /*{
                     MetricName: 'humidity',
                     Dimensions: [{ Name: 'room', Value: mac }],
                     Timestamp: closestFiveMinutes,
                     Unit: 'None',
                     Value: humidity
                 },
-                /* {
+                 {
                     MetricName: 'batteryPercentage',
                     Dimensions: [{ Name: 'room', Value: mac }],
                     Timestamp: closestFiveMinutes,
